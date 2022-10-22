@@ -4,13 +4,12 @@ import random
 
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
-p1 = random.choice(cards)
-p2 = random.choice(cards)
-d1 = random.choice(cards)
-d2 = random.choice(cards)
-
-
 def blackjack():
+  p1 = random.choice(cards)
+  p2 = random.choice(cards)
+  d1 = random.choice(cards)
+  d2 = random.choice(cards)
+  
   player_cards = {"p1": p1, "p2": p2}
   player_cards_values = [p1, p2]
   player_cards_summation = p1 + p2
