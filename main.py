@@ -9,6 +9,12 @@ def blackjack():
   p2 = random.choice(cards)
   d1 = random.choice(cards)
   d2 = random.choice(cards)
+
+  if p1 == 11 and p2 == 11:
+    p1 = 1
+
+  if d1 == 11 and d2 == 11:
+    d1 = 1
   
   player_cards = {"p1": p1, "p2": p2}
   player_cards_values = [p1, p2]
@@ -39,7 +45,7 @@ def blackjack():
       for card in player_cards_values:
         player_cards_summation += card
 
-      if player_cards_summation > 21 and 11 in player_cards_values:
+      while player_cards_summation > 21 and 11 in player_cards_values:
         ace_position = player_cards_values.index(11)
         player_cards_values[ace_position] = 1
         player_cards_summation -= 10
@@ -70,7 +76,7 @@ def blackjack():
     for card in dealer_cards_values:
       dealer_cards_summation += card
 
-    if dealer_cards_summation > 21 and 11 in dealer_cards_values:
+    while dealer_cards_summation > 21 and 11 in dealer_cards_values:
       ace_position = dealer_cards_values.index(11)
       dealer_cards_values[ace_position] = 1
       dealer_cards_summation -= 10
@@ -95,7 +101,7 @@ def blackjack():
       elif player_cards_summation == dealer_cards_summation:
         print("Tie *_*")
       else:
-        print("You lose (╥﹏╥)")
+        print("You lose ╥﹏╥")
 
   again = input("Do you want to play another game of blackjack?\nType 'y' or 'n':\n").lower()
   if again == 'y':
