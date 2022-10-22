@@ -45,16 +45,14 @@ def blackjack():
       for card in player_cards_values:
         player_cards_summation += card
 
-      while player_cards_summation > 21 and 11 in player_cards_values:
+      if player_cards_summation > 21 and 11 in player_cards_values:
         ace_position = player_cards_values.index(11)
         player_cards_values[ace_position] = 1
         player_cards_summation -= 10
-        first_ace = True
-        while first_ace == True:
-          for card in player_cards:
+        for card in player_cards:
+          if player_cards_summation > 21 and 11 in player_cards_values:
             if player_cards[card] == 11:
               player_cards[card] = 1
-              first_ace = False
 
       print(f" Your cards: {player_cards_values}, current score: {player_cards_summation}")
       print(f" Computer's first card: {d1}")
@@ -76,16 +74,14 @@ def blackjack():
     for card in dealer_cards_values:
       dealer_cards_summation += card
 
-    while dealer_cards_summation > 21 and 11 in dealer_cards_values:
+    if dealer_cards_summation > 21 and 11 in dealer_cards_values:
       ace_position = dealer_cards_values.index(11)
       dealer_cards_values[ace_position] = 1
       dealer_cards_summation -= 10
-      first_ace = True
-      while first_ace == True:
-        for card in dealer_cards:
+      for card in dealer_cards:
+        if dealer_cards_summation > 21 and 11 in dealer_cards_values:
           if dealer_cards[card] == 11:
             dealer_cards[card] = 1
-            first_ace = False
 
   print(f" Your final hand: {player_cards_values}, final score: {player_cards_summation}")
   print(f" Computer's final hand: {dealer_cards_values}, final score: {dealer_cards_summation}")
