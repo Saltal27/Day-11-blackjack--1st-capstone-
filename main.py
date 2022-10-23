@@ -43,7 +43,7 @@ def blackjack():
   elif player_blackjack == True:
     print(f" Your final hand: {player_cards_values}, final score: black jack")
     print(f" Computer's final hand: {dealer_cards_values}, final score: {dealer_cards_summation}")
-      print("You got black jack! You win ^-^")
+    print("You got black jack! You win ^-^")
   elif dealer_blackjack == True:
     print(f" Your final hand: {player_cards_values}, final score: {player_cards_summation}")
     print(f" Computer's final hand: {dealer_cards_values}, final score: {dealer_cards_summation}")
