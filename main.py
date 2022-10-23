@@ -85,19 +85,19 @@ def blackjack():
       dealer_cards_number += 1
       dealer_cards[f"d{dealer_cards_number}"] = random.choice(cards)
 
-        dealer_cards_values = []
-        for card in dealer_cards:
-          dealer_cards_values.append(dealer_cards[card])
+      dealer_cards_values = []
+      for card in dealer_cards:
+        dealer_cards_values.append(dealer_cards[card])
 
-        dealer_cards_summation = sum(dealer_cards_values)
+      dealer_cards_summation = sum(dealer_cards_values)
 
-        for card in dealer_cards:
-          if dealer_cards_summation > 21 and 11 in dealer_cards_values:
-            if dealer_cards[card] == 11:
-              dealer_cards[card] = 1
-              ace_position = dealer_cards_values.index(11)
-              dealer_cards_values[ace_position] = 1
-              dealer_cards_summation = sum(dealer_cards_values)
+      for card in dealer_cards:
+        if dealer_cards_summation > 21 and 11 in dealer_cards_values:
+          if dealer_cards[card] == 11:
+            dealer_cards[card] = 1
+            ace_position = dealer_cards_values.index(11)
+            dealer_cards_values[ace_position] = 1
+            dealer_cards_summation = sum(dealer_cards_values)
 
     print(f" Your final hand: {player_cards_values}, final score: {player_cards_summation}")
     print(f" Computer's final hand: {dealer_cards_values}, final score: {dealer_cards_summation}")
