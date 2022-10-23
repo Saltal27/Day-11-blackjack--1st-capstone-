@@ -73,8 +73,8 @@ def blackjack():
               player_cards_values[ace_position] = 1
               player_cards_summation = sum(player_cards_values)
 
-          print(f" Your cards: {player_cards_values}, current score: {player_cards_summation}")
-          print(f" Computer's first card: {d1}")
+        print(f" Your cards: {player_cards_values}, current score: {player_cards_summation}")
+        print(f" Computer's first card: {d1}")
 
       elif hit == 'n':
         stand = True
